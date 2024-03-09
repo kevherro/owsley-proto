@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package completion;
+
+service Generator
+{
+    rpc Completion(CompletionRequest) returns (CompletionResponse);
+}
+
+message CompletionRequest
+{
+    string model = 1;
+    string prompt = 2;
+}
+
+message CompletionResponse
+{
+    string result = 1;
+}
